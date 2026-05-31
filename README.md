@@ -1,4 +1,4 @@
-# Heart Disease Prediction — Full ML Portfolio
+# Heart Disease Prediction — End-to-End Machine Learning Pipeline
 
 ## Overview
 End-to-end machine learning project predicting heart disease using
