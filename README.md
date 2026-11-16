@@ -17,18 +17,25 @@ Covers the full ML pipeline from EDA through to deep learning.
 | Evaluation | 5-Fold CV, Paired t-test, Confusion Matrix |
 
 ## Results
+5-fold CV accuracy, with all preprocessing (scaling, feature selection) and
+hyperparameter search (K, depth, grid search) fit inside the training folds
+only — no test-set or full-dataset leakage into any model's selection.
+
 | Model | CV Accuracy |
 |---|---|
-| Random Forest | **86.6%** ← Winner |
+| Random Forest | **86.5%** ← Winner |
 | Logistic Regression | 85.8% |
-| Gradient Boosting | 85.1% |
+| Gradient Boosting | 85.6% |
+| KNN (K=29) | 84.9% |
 | Decision Tree | 84.7% |
 | Naive Bayes | 84.0% |
-| KNN (K=8) | 83.4% |
-| Neural Network | 81.7% |
+| Neural Network | 83.0% |
 
 ## Key Findings
-- Random Forest statistically outperforms KNN, Decision Tree and Neural Network (p < 0.05)
+- Random Forest has the best mean CV accuracy, but a paired t-test shows it's
+  only *statistically* significant against the Neural Network (p < 0.05) —
+  it is not significantly better than Logistic Regression, KNN, Decision
+  Tree, Gradient Boosting, or Naive Bayes once everything is tuned fairly
 - ST_Slope, ChestPainType, and MaxHR are the strongest predictors
 - Neural networks underperform on small tabular datasets
 - Cross-validation gives more reliable estimates than a single test split
